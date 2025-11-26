@@ -1,0 +1,38 @@
+JOIN BREAKOUT ROOMS
+
+team 1 (Menu & ingredients (inventroy management))
+- nir
+- Yevgeny
+- itzhak
+
+team 2 (restaurant tables & sitting status (+ reservations))
+- sergey
+- gal
+- sivan
+
+team 3 (orders & payments (create checks for tables/orders))
+- Maryam
+- ariel
+- regev
+
+
+1) design the table schema
+- what tables you think we need?
+- what columns will the tables have?
+- what tables are related to each other?
+
+
+2) write out the query for creating the table
+
+PRIMARY_KEY 
+FOREIGN_KEY
+UNIQUE
+NOT_NULL
+DEFAULT
+
+
+
+what can help you "discover" the DB structure?
+
+- read the case study again and identify physical objects/events (Customer, Dish, Table, Order...) 
+- look for verbs that connect the nouns (Customers place Orders, Employees work Shifts)
