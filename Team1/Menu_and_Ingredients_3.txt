@@ -1,28 +1,28 @@
-CREATE TABLE TableMenu (
-Dish_ID INT,
+CREATE TABLE TableMenu4 (
+Dish_ID INT PRIMARY KEY,
 Dish_Name TEXT,
 Description TEXT,
 Category TEXT,
 Dish_Price INT,
 Extras TEXT);
-CREATE TABLE DISH_Ingredients (
-Ingredient_ID INT,
-Dish_ID INT,
+CREATE TABLE DISH_Ingredients4 (
+Ingredient_ID REFERENCES INVENTORY(Ingredient_ID),
+Dish_ID INT PRIMARY KEY,
 Ingredient_Name TEXT,
 Ingrediant_Quantity INT,
 Igrediant_unit INT,
 Ingredient_Price INT,
 Allergans TEXT);
-CREATE TABLE INVENTORY (
-Ingredient_ID INT,
+CREATE TABLE INVENTORY4 (
+Ingredient_ID INT PRIMARY KEY,
 Ingredient_Name TEXT,
 Current_stock INT,
 Igrediant_unit INT,
 Minimum_stock INT
 Supplier_name TEXT);
-CREATE TABLE Orders (
-Table_ID INT,
-Dish_ID INT,
+CREATE TABLE Orders4 (
+Table_ID INT PRIMARY KEY,
+Dish_ID INT REFERENCES DISH_Ingredients(Dish_ID),
 Number_of_dishes INT,
 Extras TEXT,
 Waiter_ID INT,
