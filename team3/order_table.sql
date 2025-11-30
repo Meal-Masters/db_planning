@@ -8,5 +8,4 @@ CREATE TABLE [Order](
    [total_price]TEXT,
    [tip]TEXT,
    [waiter_id]INTEGER
-
 )
