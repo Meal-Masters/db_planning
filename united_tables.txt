@@ -1,0 +1,91 @@
+### TEAM 1
+
+CREATE TABLE TableMenu4 (
+Dish_ID INT PRIMARY KEY,
+Dish_Name TEXT,
+Description TEXT,
+Category TEXT,
+Dish_Price INT,
+Extras TEXT);
+
+CREATE TABLE DISH_Ingredients4 (
+Ingredient_ID REFERENCES INVENTORY(Ingredient_ID),
+Dish_ID INT PRIMARY KEY,
+Ingredient_Name TEXT,
+Ingrediant_Quantity INT,
+Igrediant_unit INT,
+Ingredient_Price INT,
+Allergans TEXT);
+
+CREATE TABLE INVENTORY4 (
+Ingredient_ID INT PRIMARY KEY,
+Ingredient_Name TEXT,
+Current_stock INT,
+Igrediant_unit INT,
+Minimum_stock INT
+Supplier_name TEXT);
+
+CREATE TABLE Orders4 (
+Table_ID INT PRIMARY KEY,
+Dish_ID INT REFERENCES DISH_Ingredients(Dish_ID),
+Number_of_dishes INT,
+Extras TEXT,
+Waiter_ID INT,
+Price INT);
+
+### TEAM 2
+
+CREATE TABLE Table_Orders (
+OrderID INTEGER PRIMARY KEY,
+TableID INTEGER,
+Order_Date TEXT,
+Order_Time TEXT,
+Number_Of_Guests INTEGER
+);
+
+CREATE TABLE Sitting (
+SittingID INTEGER PRIMARY KEY,
+TableID INTEGER,
+ReservationID INTEGER,
+sitting_date TEXT,
+sitting_time  TEXT
+);
+
+--TableID -is Foreign Key- connected to Table Orders 
+--ReservationID- is Foreign Key- connected to Table PhoneReservations
+
+
+CREATE TABLE Phone_Reservations(
+	Reservation_Number INT PRIMARY KEY,
+	Date DATE,
+	Time TIME,
+	Amount_of_people INT NOT NULL,
+	Availibility_Of_Table INT NOT NULL DEFAULT 1 CHECK( Availibility_Of_Table IN(1,0)),
+	Name_of_Customer TEXT NOT NULL,
+	Phone TEXT NOT NULL
+	
+)
+;
+
+### TEAM 3
+
+CREATE TABLE Customers (
+    club_member_id INTEGER PRIMARY KEY, 
+    first_name     TEXT NOT NULL,
+    last_name      TEXT NOT NULL,
+    phone_number   TEXT,
+    birthday       DATE
+);
+
+
+CREATE TABLE [Order](
+   [order_id]TEXT,
+   [table_number]INTEGER,
+   [status]TEXT,
+   [start_time]TEXT,
+   [end_time]TEXT,
+   [club_membership]TEXT,
+   [total_price]TEXT,
+   [tip]TEXT,
+   [waiter_id]INTEGER
+)
