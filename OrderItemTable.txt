@@ -1,0 +1,13 @@
+OrderItem Table
+
+CREATE TABLE OrderItem (
+	item_id INT,
+	order_id INT,
+	product_name, TEXT
+	quantity INT,
+	price INT
+)
+
+-- item_id (PK)
+--order_id (FK -> Order)
+--product_item (FK -> Team1)
